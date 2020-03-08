@@ -1,24 +1,32 @@
 @font-face {
     font-family: 'GothaPro';
     src: url("assets/fonts/GothaProReg.otf");
-    
-    font-family: 'GothaProBold';
-    src: url("assets/fonts/GothaProBol.otf");
-    
-    font-family: 'GothaProMed';
-    src: url("assets/fonts/GothaProMed.otf");
-    
-    font-family: 'GothaProLight';
-    src: url("assets/fonts/GothaProLig.otf");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
 }
 
+@font-face {
+    font-family: 'GothaPro';
+    src: url("assets/fonts/GothaProMed.otf");
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+}
 
-//font-family: 'Roboto', sans-serif;
+@font-face {
+    font-family: 'GothaPro';
+    src: url("assets/fonts/GothaProBol.otf");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
 $font-family-sans-serif: 'Arial', 'Helvetica', sans-serif;
 $font-family-serif: 'Georgia', 'Times New Roman', 'Times', serif;
 $font-family-monospace: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
 
-$fontFamilyOne: 'GothaProBold', sans-serif; // titles
+$fontFamilyOne: 'GothaPro', sans-serif; // titles
 $fontFamilyTwo: 'GothaPro', sans-serif; // body
-$fontFamilyThree: 'GothaProMed', sans-serif; // buttons
-$fontFamilyFour: 'GothaProLight', sans-serif;
+$fontFamilyThree: 'GothaPro', sans-serif; // buttons
+$fontFamilyFour: 'GothaPro', sans-serif;

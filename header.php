@@ -53,8 +53,7 @@
 
 <?php wp_body_open(); ?>
 <div class="wrapper js-container"><!--Do not delete!-->
-
-    <header class="page-header fixed-to-top">
+    <header class="header">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
@@ -70,7 +69,23 @@
                         ?>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+                <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+                    <div class="header__wrapper">
+                        <?php echo do_shortcode('[bw-messengers]'); ?>
+                        <?php echo do_shortcode('[bw-phone]'); ?>
+                        <?php get_search_form(); ?>
+                        <?php echo do_shortcode('[bw-social]'); ?>
+                        <?php if (function_exists('pll_the_languages')) { ?>
+                            <ul class="lang">
+                                <?php pll_the_languages(array(
+                                    'show_flags' => 0,
+                                    'show_names' => 1,
+                                    'hide_if_empty' => 0,
+                                    'display_names_as' => 'name'
+                                )); ?>
+                            </ul>
+                        <?php } ?>
+                    </div>
                     <?php if (has_nav_menu('main-nav')) { ?>
                         <nav class="nav js-menu">
                             <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
@@ -85,10 +100,8 @@
                             )); ?>
                         </nav>
                     <?php } ?>
-                </div>
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                    <button type="button" class="btn btn-secondary btn-block <?php the_lang_class('js-call-back'); ?>">
-                        <?php _e('Call back', 'brainworks'); ?>
+                    <button type="button" class="btn btn-secondary <?php the_lang_class('js-call-back'); ?>">
+                        <?php pll_e('Call-back', 'Call-back'); ?>
                     </button>
                 </div>
             </div>
