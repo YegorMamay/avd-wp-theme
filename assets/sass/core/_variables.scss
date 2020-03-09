@@ -1,6 +1,13 @@
 $debug: false !default;
 $image-url-path: "assets/img/" !default;
 $font-url-path: "assets/fonts/" !default;
+$primary_color_1: #ffffff;
+$primary_color_2: #000000;
+
+//Theme colors
+$light_color: #dadada !default;
+$border_round_radius: 50%;
+$social_box_shadow: 0 0 9px 0 rgba(0, 0, 0, 0.22);
 
 // BRAND
 $themeColorOne: #2b2525; // Обычно самый темный цвет. Используется для:

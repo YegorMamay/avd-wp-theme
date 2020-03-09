@@ -183,3 +183,16 @@ img {
         background-image: none;
     }
 }
+
+
+@media  screen and (min-width: 1360px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media  screen and (min-width: 1500px) {
+    .container {
+        max-width: 1500px;
+    }
+}

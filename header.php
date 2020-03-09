@@ -62,47 +62,57 @@
                             'name'    => 'logo.svg',
                             'options' => [
                                 'class'  => 'logo-img',
-                                'width'  => 100,
-                                'height' => 50,
+                                'width'  => 120,
+                                'height' => 120,
                                 ],
                             ])
                         ?>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
-                    <div class="header__wrapper">
-                        <?php echo do_shortcode('[bw-messengers]'); ?>
-                        <?php echo do_shortcode('[bw-phone]'); ?>
-                        <?php get_search_form(); ?>
-                        <?php echo do_shortcode('[bw-social]'); ?>
-                        <?php if (function_exists('pll_the_languages')) { ?>
-                            <ul class="lang">
-                                <?php pll_the_languages(array(
-                                    'show_flags' => 0,
-                                    'show_names' => 1,
-                                    'hide_if_empty' => 0,
-                                    'display_names_as' => 'name'
-                                )); ?>
-                            </ul>
-                        <?php } ?>
+                    <div class="header__row">
+                        <div class="header__col">
+                            <?php echo do_shortcode('[bw-messengers]'); ?>
+                            <?php echo do_shortcode('[bw-phone]'); ?>
+                        </div>
+                        <div class="header__col">
+                            <?php get_search_form(); ?>
+                            <?php echo do_shortcode('[bw-social]'); ?>
+                            <div class="lang-wrapper">
+                                <?php if (function_exists('pll_the_languages')) { ?>
+                                    <ul class="lang">
+                                        <?php pll_the_languages(array(
+                                            'show_flags' => 0,
+                                            'show_names' => 1,
+                                            'hide_if_empty' => 0,
+                                            'display_names_as' => 'name'
+                                        )); ?>
+                                    </ul>
+                                <?php } ?>
+                            </div>
+                        </div>
                     </div>
-                    <?php if (has_nav_menu('main-nav')) { ?>
-                        <nav class="nav js-menu">
-                            <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
-                            <?php wp_nav_menu(array(
-                            'theme_location' => 'main-nav',
-                            'container' => false,
-                            'menu_class' => 'menu-container',
-                            'menu_id' => '',
-                            'fallback_cb' => 'wp_page_menu',
-                            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                            'depth' => 3
-                            )); ?>
-                        </nav>
-                    <?php } ?>
-                    <button type="button" class="btn btn-secondary <?php the_lang_class('js-call-back'); ?>">
-                        <?php pll_e('Call-back', 'Call-back'); ?>
-                    </button>
+                    <div class="header__row">
+                        <div class="header__col">
+                            <?php if (has_nav_menu('main-nav')) { ?>
+                                <nav class="nav js-menu">
+                                    <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
+                                    <?php wp_nav_menu(array(
+                                        'theme_location' => 'main-nav',
+                                        'container' => false,
+                                        'menu_class' => 'menu-container',
+                                        'menu_id' => '',
+                                        'fallback_cb' => 'wp_page_menu',
+                                        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                        'depth' => 3
+                                    )); ?>
+                                </nav>
+                            <?php } ?>
+                        </div>
+                        <button type="button" class="btn btn-secondary <?php the_lang_class('js-call-back'); ?>">
+                            <?php pll_e('Call-back', 'Call-back'); ?>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
