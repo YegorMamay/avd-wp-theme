@@ -531,6 +531,8 @@ if (!function_exists('bw_reviews_shortcode')) {
 
         if ($query->have_posts()) {
 
+            $output .= '<div class="review-bg">' . pll__('Text-reviews') . '</div>';
+
             $output .= '<div class="review-slider text-center js-reviews">';
 
             while ($query->have_posts()) {
@@ -583,7 +585,9 @@ if (!function_exists('bw_reviews_shortcode')) {
                 $post_class = 'class="' . join(' ', get_post_class('review-item', null)) . '"';
 
                 $output .= '<div id="post-' . get_the_ID() . '" ' . $post_class . '>';
-
+                $output .= '<div class="review-content">' . get_the_content() . '</div>';
+                $output .= '<div class="review-caption">';
+                $output .= '<div class="review-section">';
                 $output .= '<div class="review-client">';
                 $output .= get_the_post_thumbnail(null, 'thumbnail', array('class' => 'review-avatar'));
                 if (count($social)) {
@@ -593,8 +597,9 @@ if (!function_exists('bw_reviews_shortcode')) {
                 }
                 $output .= '</div>';
                 $output .= '<div class="review-title">' . get_the_title() . '</div>';
-                $output .= '<div class="review-content">' . get_the_content() . '</div>';
-
+                $output .= '</div>';
+                $output .= '<button type="button" class="btn btn-primary review-button">' . pll__('Send-review') . '</button>';
+                $output .= '</div>';
                 $output .= '</div>';
             }
 

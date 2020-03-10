@@ -21,6 +21,11 @@ $attachment_image = wp_get_attachment_url($attachment_elem_id);
 </section>
  */ ?>
 <div class="container">
+    <div class="review-container">
+        <img class="review__decor-image" src="/wp-content/themes/avd-wp-theme/assets/img/leaf-clean-1.png" alt="image">
+        <?php echo do_shortcode('[bw-reviews] '); ?>
+    </div>
+    <?php echo do_shortcode('[bw-advert count=3 class=front-news]'); ?>
 
 <?php get_template_part('loops/content', 'home'); ?>
 
