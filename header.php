@@ -7,24 +7,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>">
 
-    <title><?php 
-        if ( is_front_page() ) { echo bloginfo('name'); } 
+    <title><?php
+        if ( is_front_page() ) { echo bloginfo('name'); }
         elseif ( is_post_type_archive() )  { echo post_type_archive_title();}
-        elseif ( !is_front_page() || !is_page()) { echo single_post_title(); } 
-        elseif ( !is_front_page() || !is_single()) { echo the_title();} 
+        elseif ( !is_front_page() || !is_page()) { echo single_post_title(); }
+        elseif ( !is_front_page() || !is_single()) { echo the_title();}
     ?></title>
-    
+
     <meta name="description" content="<?php bloginfo('description'); ?>">
 
     <!-- OpenGraph -->
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:locale:alternate" content="ru_RU" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="<?php 
-        if ( is_front_page() ) { echo bloginfo('name'); } 
+    <meta property="og:title" content="<?php
+        if ( is_front_page() ) { echo bloginfo('name'); }
         elseif ( is_post_type_archive() )  { echo post_type_archive_title();}
-        elseif ( !is_front_page() || !is_page()) { echo single_post_title(); } 
-        elseif ( !is_front_page() || !is_single()) { echo the_title();} 
+        elseif ( !is_front_page() || !is_page()) { echo single_post_title(); }
+        elseif ( !is_front_page() || !is_single()) { echo the_title();}
     ?>" />
     <meta property="og:description" content="<?php bloginfo('description'); ?>">
     <meta property="og:url" content="<?php echo esc_url(site_url()); ?>" />
@@ -34,11 +34,11 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="628" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="<?php 
-        if ( is_front_page() ) { echo bloginfo('name'); } 
+    <meta name="twitter:title" content="<?php
+        if ( is_front_page() ) { echo bloginfo('name'); }
         elseif ( is_post_type_archive() )  { echo post_type_archive_title();}
-        elseif ( !is_front_page() || !is_page()) { echo single_post_title(); } 
-        elseif ( !is_front_page() || !is_single()) { echo the_title();} 
+        elseif ( !is_front_page() || !is_page()) { echo single_post_title(); }
+        elseif ( !is_front_page() || !is_single()) { echo the_title();}
     ?>" />
     <meta name="twitter:image" content="<?php echo esc_url(the_post_thumbnail_url()); ?>" />
     <!-- OpenGraph end-->
@@ -53,7 +53,7 @@
 
 <?php wp_body_open(); ?>
 <div class="wrapper js-container"><!--Do not delete!-->
-    <header class="header">
+    <header class="header hide-on-mobile">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
@@ -92,7 +92,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="header__row">
+                    <div class="header__row header--padding-none">
                         <div class="header__col">
                             <?php if (has_nav_menu('main-nav')) { ?>
                                 <nav class="nav js-menu">
@@ -109,7 +109,10 @@
                                 </nav>
                             <?php } ?>
                         </div>
-                        <button type="button" class="btn btn-secondary <?php the_lang_class('js-call-back'); ?>">
+                        <button type="button" class="btn btn-secondary btn-icon <?php the_lang_class('js-call-back'); ?>">
+                            <svg class="phone-icon">
+                                <use xlink:href="#icon_phone"></use>
+                            </svg>
                             <?php pll_e('Call-back', 'Call-back'); ?>
                         </button>
                     </div>
@@ -120,12 +123,17 @@
 
     <!-- Mobile menu start-->
     <div class="nav-mobile-header">
-        <button class="hamburger js-hamburger" type="button" tabindex="0">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-        </button>
         <div class="logo"><?php get_default_logo_link(); ?></div>
+        <div class="nav-brn-group">
+            <button class="mobile-search js-show-search" type="button">
+                <i class="fal fa-search"></i>
+            </button>
+            <button class="hamburger js-hamburger" type="button" tabindex="0">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+            </button>
+        </div>
     </div>
     <?php if (has_nav_menu('main-nav')) { ?>
         <nav class="nav js-menu hide-on-desktop">
@@ -139,6 +147,23 @@
             'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
             'depth' => 3
         )); ?>
+            <div class="mobile-block">
+                <?php echo do_shortcode('[bw-messengers]'); ?>
+                <?php echo do_shortcode('[bw-phone]'); ?>
+                <div class="mobile-block__item">
+                    <?php if (function_exists('pll_the_languages')) { ?>
+                        <ul class="lang">
+                            <?php pll_the_languages(array(
+                                'show_flags' => 0,
+                                'show_names' => 1,
+                                'hide_if_empty' => 0,
+                                'display_names_as' => 'name',
+                                'dropdown' => 1
+                            )); ?>
+                        </ul>
+                    <?php } ?>
+                </div>
+            </div>
         </nav>
     <?php } ?>
     <!-- Mobile menu end-->

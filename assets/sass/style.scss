@@ -11,7 +11,7 @@ License URI:
 Version: 4.8.6
 Tags: one-column, two-columns, full-width-template, e-commerce
 */
- 
+
 // CORE
 @import "core/reset";
 @import "core/mediaqueries";
@@ -68,131 +68,157 @@ Tags: one-column, two-columns, full-width-template, e-commerce
 @import "blocks/footer";
 
 ::selection {
-    text-shadow: none;
-    color: $selectionFontColor;
-    background-color: $selectionBgColor;
+  text-shadow: none;
+  color: $selectionFontColor;
+  background-color: $selectionBgColor;
 }
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 * {
-    @if ($debug) {
-        outline: 1px solid red !important;
-    }
+  @if ($debug) {
+    outline: 1px solid red !important;
+  }
 
-    &,
-    &::before,
-    &::after {
-        box-sizing: inherit;
-    }
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    min-width: 320px;
-    position: relative;
-    color: $bodyFontColor;
-    font: 400 16px/1.5 $fontFamilyTwo;
-    background-color: $bodyBgColor;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  min-width: 320px;
+  position: relative;
+  color: $bodyFontColor;
+  font: 400 16px/1.5 $fontFamilyTwo;
+  background-color: $bodyBgColor;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .wrapper {
-    position: relative;
-    overflow-x: hidden;
-    min-height: 100%;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100%;
+  padding-top: 75px;
 }
+
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    padding-top: 0;
+  }
+}
+
 
 b,
 strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 img {
-    display: inline-block;
-    vertical-align: middle;
-    max-width: 100%; // не удалять
-    height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%; // не удалять
+  height: auto;
+}
+
+.btn-icon {
+  color: $primary_color_2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 :focus {
-    outline: 0;
+  outline: 0;
 }
 
 .body-overflow {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .svg-icon {
-    max-width: 100%;
-    display: inline-block;
-    vertical-align: middle;
-    @extend %smooth_animation;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  @extend %smooth_animation;
 }
 
 .kama_breadcrumbs {
-    padding: 10px 0;
-    font-size: 14px;
-    margin-bottom: 10px;
+  padding: 10px 0;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
 .page-name {
-    text-align: center;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .page-404 {
-    width: 90%;
-    max-width: 1170px;
-    margin: 0 auto;
-    height: 90vh;
-    background: image-url('404.png') no-repeat center center;
+  width: 90%;
+  max-width: 1170px;
+  margin: 0 auto;
+  height: 90vh;
+  background: image-url('404.png') no-repeat center center;
 
-    .contain {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  .contain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        @media #{$mobile} {
-            display: block;
+    @media #{$mobile} {
+      display: block;
 
-            div {
-                margin-bottom: 20px;
-            }
-        }
-
-        @media #{$tablet} {
-            display: block;
-
-            div {
-                margin-bottom: 20px;
-            }
-        }
+      div {
+        margin-bottom: 20px;
+      }
     }
 
-    @media (max-width: 768px) {
-        background-image: none;
+    @media #{$tablet} {
+      display: block;
+
+      div {
+        margin-bottom: 20px;
+      }
     }
+  }
+
+  @media (max-width: 768px) {
+    background-image: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
 }
 
 
-@media  screen and (min-width: 1360px) {
-    .container {
-        max-width: 1320px;
-    }
+@media screen and (min-width: 1360px) {
+  .container {
+    max-width: 1320px;
+  }
 }
 
-@media  screen and (min-width: 1500px) {
-    .container {
-        max-width: 1500px;
-    }
+@media screen and (min-width: 1500px) {
+  .container {
+    max-width: 1500px;
+  }
 }

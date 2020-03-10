@@ -514,6 +514,10 @@
         });
     };
 
+    $('.js-show-search').on('click', function () {
+        $('main-search').toggleClass('active');
+    });
+
     //disabled page scroll
     $('.js-hamburger').on('click', function () {
         $('body').addClass('body-overflow');

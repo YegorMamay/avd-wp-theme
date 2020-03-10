@@ -1,14 +1,25 @@
+.home {
+  & .header {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}
+
+
 .header {
   background: $primary_color_1;
   color: $primary_color_2;
   width: 100%;
   padding-top: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid $light_color;
+
 
   &__row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 12px 0;
 
     &:first-child {
       border-bottom: 1px solid $light_color;
@@ -19,6 +30,20 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+
+    & .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      padding-top: 20px;
+    }
+  }
+
+  &--padding-none {
+    padding: 0;
   }
 }
 
@@ -63,6 +88,33 @@
 
     & i {
       font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main-search {
+    background: red;
+    position: fixed;
+    left: -200;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 100000000000;
+    &.active {
+      left: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .header {
+    &__col {
+      & .phone {
+        &-item {
+          margin: 0 15px;
+        }
+      }
     }
   }
 }

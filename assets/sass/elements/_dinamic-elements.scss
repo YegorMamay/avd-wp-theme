@@ -18,6 +18,14 @@
     vertical-align: middle;
   }
 
+  &-icon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    fill: $primary_color_1;
+    margin-right: 8px;
+  }
+
   &-item {
     margin: 0 5px;
   }
@@ -152,6 +160,7 @@
   top: 0;
   left: 0;
   z-index: 1;
+  transition: height ease-in-out 0.5s;
 
   &:after {
     content: "";

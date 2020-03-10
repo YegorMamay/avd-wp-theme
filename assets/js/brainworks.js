@@ -250,6 +250,9 @@
             });
         });
     };
+    $(".js-show-search").on("click", function() {
+        $("main-search").toggleClass("active");
+    });
     $(".js-hamburger").on("click", function() {
         $("body").addClass("body-overflow");
     });
