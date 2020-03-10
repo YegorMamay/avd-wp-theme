@@ -20,13 +20,18 @@ $attachment_image = wp_get_attachment_url($attachment_elem_id);
 </div>
 </section>
  */ ?>
+<?php layerslider(3); ?>
 <div class="container">
-    <div class="review-container">
+    <section class="review-container">
+        <h2 class="main-title h3"><?php echo pll_e('Text-reviews-title'); ?></h2>
         <img class="review__decor-image" src="/wp-content/themes/avd-wp-theme/assets/img/leaf-clean-1.png" alt="image">
         <?php echo do_shortcode('[bw-reviews] '); ?>
-    </div>
+        <img class="review__image" src="/wp-content/themes/avd-wp-theme/assets/img/kurica.png" alt="image">
+    </section>
+    <section class="article-section">
+        <h2 class="main-title h3"><?php echo pll_e('News-title'); ?></h2>
+    </section>
     <?php echo do_shortcode('[bw-advert count=3 class=front-news]'); ?>
-
 <?php get_template_part('loops/content', 'home'); ?>
 
 </div><!-- /.container -->

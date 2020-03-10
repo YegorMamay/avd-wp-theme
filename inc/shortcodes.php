@@ -362,7 +362,7 @@ if (!function_exists('bw_advert_shortcode')) {
                 $excerpt = sprintf('<div class="%s-excerpt">%s</div>', $basic_class, get_the_excerpt());
 
                 $btn = sprintf(
-                    '<div class="text-right"><a class="btn btn-secondary btn-sm %s-link" href="%s">%s</a></div>',
+                    '<div class="text-left"><a class="btn btn-link  %s-link" href="%s">%s ></a></div>',
                     $basic_class,
                     get_the_permalink(),
                     __('Continue reading', 'brainworks')
@@ -598,7 +598,7 @@ if (!function_exists('bw_reviews_shortcode')) {
                 $output .= '</div>';
                 $output .= '<div class="review-title">' . get_the_title() . '</div>';
                 $output .= '</div>';
-                $output .= '<button type="button" class="btn btn-primary review-button">' . pll__('Send-review') . '</button>';
+                $output .= '<button type="button" class="btn btn-primary review-button js-send-review">' . pll__('Send-review') . '</button>';
                 $output .= '</div>';
                 $output .= '</div>';
             }
