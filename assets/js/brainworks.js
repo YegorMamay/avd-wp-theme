@@ -250,8 +250,21 @@
             });
         });
     };
-    $(".js-show-search").on("click", function() {
-        $("main-search").toggleClass("active");
+    var mobileSearchBtn = document.querySelector(".js-show-search");
+    var blockSearchForm = document.getElementById("searchform");
+    $(window).on("resize", function() {
+        if ($(window).width() < 1024) {
+            document.querySelector(".js-container").prepend(blockSearchForm);
+        }
+    });
+    $(window).trigger("resize");
+    mobileSearchBtn.addEventListener("click", function() {
+        blockSearchForm.classList.add("active");
+    });
+    $(document).mouseup(function(e) {
+        if (!$("#searchform").is(e.target) && $("#searchform").has(e.target).length === 0) {
+            blockSearchForm.classList.remove("active");
+        }
     });
     $(".js-hamburger").on("click", function() {
         $("body").addClass("body-overflow");

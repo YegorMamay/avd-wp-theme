@@ -92,17 +92,42 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1025px) {
   .main-search {
-    background: red;
+    background: $primary_color_1;
     position: fixed;
-    left: -200;
     top: 0;
+    left: -200%;
     width: 100%;
-    height: 70px;
-    z-index: 100000000000;
+    max-width: none;
+    z-index: 5000;
+    transition: all 0.5s;
+    border-bottom: 1px solid $light_color;
+    box-shadow: $social_box_shadow;
+
     &.active {
+      transition: all 0.5s;
       left: 0;
+    }
+
+    &__input {
+      width: calc(100% - 55px);
+      height: 70px;
+      border: none;
+    }
+
+    &__button {
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      bottom: auto;
+      z-index: auto;
+      width: 55px;
+
+      & i {
+        color: $primary_color_2;
+      }
     }
   }
 }

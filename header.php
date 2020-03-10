@@ -76,7 +76,9 @@
                             <?php echo do_shortcode('[bw-phone]'); ?>
                         </div>
                         <div class="header__col">
-                            <?php get_search_form(); ?>
+                            <div class="form-search">
+                                <?php get_search_form(); ?>
+                            </div>
                             <?php echo do_shortcode('[bw-social]'); ?>
                             <div class="lang-wrapper">
                                 <?php if (function_exists('pll_the_languages')) { ?>
