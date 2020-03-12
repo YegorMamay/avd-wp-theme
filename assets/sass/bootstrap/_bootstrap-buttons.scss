@@ -473,3 +473,18 @@ fieldset:disabled a.btn {
     font-size: 14px;
   }
 }
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-download {
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  fill: $primary_color_2;
+  margin-bottom: 5px;
+  margin-left: 8px;
+}

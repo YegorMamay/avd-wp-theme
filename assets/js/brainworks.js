@@ -15,6 +15,7 @@
         dropdownPhone();
         scrollToElement();
         sidebarAccordion();
+        tabs();
         reviews(".js-reviews");
         scrollTop(".js-scroll-top");
         wrapHighlightedElements(".highlighted");
@@ -67,7 +68,7 @@
                 autoplaySpeed: 3e3,
                 arrows: true,
                 prevArrow: '<button type="button" class="slick-prev"><svg class="slider-icon"><use xlink:href="#icon_left"></use></svg></button>',
-                nextArrow: '<button type="button" class="slick-next"><svg class="slider-icon"><use xlink:href="#icno_right"></use></svg></button>',
+                nextArrow: '<button type="button" class="slick-next"><svg class="slider-icon"><use xlink:href="#icon_right"></use></svg></button>',
                 dots: false,
                 dotsClass: "slick-dots",
                 draggable: true,
@@ -272,4 +273,15 @@
     $(".js-menu-close, .menu-link").on("click", function() {
         $("body").removeClass("body-overflow");
     });
+    var tabs = function tabs() {
+        var tabsItem = $(".tab-catalog__title");
+        var tabsContent = $(".tab-catalog__container");
+        tabsItem.on("click", function() {
+            var tabsData = $(this).attr("data-tab");
+            tabsItem.removeClass("active");
+            tabsContent.removeClass("active");
+            $(this).addClass("active");
+            $("#" + tabsData).addClass("active");
+        });
+    };
 })(window, document, jQuery, window.jpAjax);
