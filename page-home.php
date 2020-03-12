@@ -18,7 +18,9 @@
                     <?php echo get_post_meta(get_the_ID(), 'about_description', true); ?>
                     <div class="about-section__bg-text"><?php echo pll_e('Text-about'); ?></div>
                 </div>
-                <a class="btn btn-primary link-button" href="<?php echo get_field('about_url'); ?>"><?php echo get_post_meta(get_the_ID(), 'about_link', true); ?> &gt;</a>
+                <a class="btn btn-primary link-button"
+                   href="<?php echo get_field('about_url'); ?>"><?php echo get_post_meta(get_the_ID(), 'about_link', true); ?>
+                    &gt;</a>
             </div>
             <div class="about-section__col">
                 <?php
@@ -91,7 +93,8 @@ $advantages_image = wp_get_attachment_url($attachment_advantages);
                     <?php $advantages_item = get_field('advantages_list'); ?>
                     <?php foreach ($advantages_item as $content) { ?>
                         <div class="block-advantages__item">
-                            <img class="block-advantages__icon" src="<?php echo $content['advantages_icon']; ?>" alt="icon">
+                            <img class="block-advantages__icon" src="<?php echo $content['advantages_icon']; ?>"
+                                 alt="icon">
                             <div class="block-advantages__item-text"><?php echo $content['advantages_text']; ?></div>
                         </div>
                     <?php } ?>
@@ -127,5 +130,46 @@ $advantages_image = wp_get_attachment_url($attachment_advantages);
     </section>
     <?php echo do_shortcode('[bw-advert count=3 class=front-news]'); ?>
     <?php get_template_part('loops/content', 'home'); ?>
+    <div class="block-contacts">
+        <h2 class="block-contacts__title h3"><?php echo get_post_meta(get_the_ID(), 'contacts_title', true); ?></h2>
+        <div class="block-contacts__wrapper">
+            <div class="block-contacts__section">
+                <div class="block-contacts__field">
+                    <?php
+                    $email = get_theme_mod('bw_additional_email');
+                    if (!empty($email)) { ?>
+                        <div class="block-contacts__icon-wrapper">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <div class="block-contacts__content">
+                            <a class="block-contacts__link" href="mailto:<?php echo esc_attr($email); ?>">
+                                <?php echo esc_html($email); ?>
+                            </a>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="block-contacts__field">
+                    <div class="block-contacts__icon-wrapper">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="block-contacts__content">
+                        <?php echo do_shortcode('[bw-phone]'); ?>
+                    </div>
+                </div>
+                <div class="block-contacts__field">
+                    <?php
+                    $address = get_theme_mod('bw_additional_address');
+                    if (!empty($address)) { ?>
+                        <div class="block-contacts__icon-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="block-contacts__content">
+                            <?php echo esc_html($address); ?>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <?php get_footer(); ?>
