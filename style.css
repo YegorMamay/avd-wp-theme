@@ -12229,8 +12229,8 @@ ol.commentlist .comment-body {
   text-transform: uppercase;
   font-weight: 700;
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 5%;
+  bottom: 15%;
   z-index: 1;
 }
 
@@ -12246,8 +12246,8 @@ ol.commentlist .comment-body {
 
 .review__image {
   position: absolute;
-  top: 38%;
-  right: -10%;
+  top: 22%;
+  right: -8%;
   z-index: 1;
 }
 
