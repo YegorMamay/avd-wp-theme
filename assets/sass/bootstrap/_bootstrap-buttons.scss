@@ -488,3 +488,11 @@ fieldset:disabled a.btn {
   margin-bottom: 5px;
   margin-left: 8px;
 }
+
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}

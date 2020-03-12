@@ -44,6 +44,7 @@ add_action( 'after_setup_theme', function () {
         pll_register_string( 'Call-back', 'Call-back', 'Brainworks' );
         pll_register_string( 'Send-review', 'Send-review', 'Brainworks' );
         pll_register_string( 'Text-reviews', 'Text-reviews', 'Brainworks' );
+        pll_register_string( 'Text-about', 'Text-about', 'Brainworks' );
         pll_register_string( 'Text-reviews-title', 'Text-reviews-title', 'Brainworks' );
         pll_register_string( 'News-title', 'News-title', 'Brainworks' );
 	}

@@ -224,6 +224,7 @@ img {
 }
 
 .main-title {
+  color: $primary_color_2;
   text-align: center;
   margin: 15px 0 20px;
   padding: 10px 0;
@@ -241,5 +242,9 @@ img {
     bottom: 0;
     left: 50%;
     z-index: 1;
+  }
+
+  &--white {
+    color: $primary_color_1;
   }
 }
