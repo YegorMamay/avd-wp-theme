@@ -12844,8 +12844,6 @@ ol.commentlist .comment-body {
   .review-client {
     width: 100px;
     height: 100px;
-    margin-left: auto;
-    margin-right: auto;
   }
   .review-content,
   .review-content p {
@@ -12864,6 +12862,9 @@ ol.commentlist .comment-body {
   .review__decor-image {
     display: none;
   }
+  .review-section {
+    width: 100%;
+  }
   .review__image {
     display: none;
   }
@@ -12878,6 +12879,12 @@ ol.commentlist .comment-body {
     padding-left: 10px;
     padding-right: 10px;
   }
+  .review-title {
+    font-size: 20px;
+    width: calc(100% - 70px);
+    text-align: left;
+    line-height: 1.2;
+  }
   .review-slider .slick-prev {
     left: 0;
   }
@@ -12885,8 +12892,10 @@ ol.commentlist .comment-body {
     right: 0;
   }
   .review-client {
-    width: 85px;
-    height: 85px;
+    width: 60px;
+    height: 60px;
+    margin-left: 0;
+    margin-right: 15px;
   }
   .review-caption {
     -webkit-box-orient: vertical;
@@ -12899,6 +12908,8 @@ ol.commentlist .comment-body {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

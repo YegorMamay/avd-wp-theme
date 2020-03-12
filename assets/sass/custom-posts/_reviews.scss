@@ -167,7 +167,7 @@ $review-next: '\00bb'; // &raquo;
       }
 
       &-arrow {
-        background: rgba(255,255,255, 0.7);
+        background: rgba(255, 255, 255, 0.7);
         cursor: pointer;
         position: absolute;
         transform: translateY(-50%);
@@ -261,8 +261,6 @@ $review-next: '\00bb'; // &raquo;
     &-client {
       width: $review-client-size;
       height: $review-client-size;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     &-content {
@@ -295,6 +293,10 @@ $review-next: '\00bb'; // &raquo;
       display: none;
     }
 
+    &-section {
+      width: 100%;
+    }
+
     &__image {
       display: none;
     }
@@ -313,6 +315,13 @@ $review-next: '\00bb'; // &raquo;
       padding-right: 10px;
     }
 
+    &-title {
+      font-size: 20px;
+      width: calc(100% - 70px);
+      text-align: left;
+      line-height: 1.2;
+    }
+
     &-slider {
       & .slick-prev {
         left: 0;
@@ -324,14 +333,18 @@ $review-next: '\00bb'; // &raquo;
     }
 
     &-client {
-      width: 85px;
-      height: 85px;
+      width: 60px;
+      height: 60px;
+      margin-left: 0;
+      margin-right: 15px;
     }
 
     &-caption {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding-left: 0;
+      padding-right: 0;
     }
 
   }
