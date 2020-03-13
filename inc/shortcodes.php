@@ -598,7 +598,7 @@ if (!function_exists('bw_reviews_shortcode')) {
                 $output .= '</div>';
                 $output .= '<div class="review-title">' . get_the_title() . '</div>';
                 $output .= '</div>';
-                $output .= '<button type="button" class="btn btn-primary review-button js-send-review">' . pll__('Send-review') . '</button>';
+                $output .= '<button type="button" class="btn btn-primary review-button ' . get_lang_class('js-review-btn') . '">' . pll__('Send-review') . '</button>';
                 $output .= '</div>';
                 $output .= '</div>';
             }

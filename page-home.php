@@ -160,7 +160,7 @@ $advantages_image = wp_get_attachment_url($attachment_advantages);
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="block-contacts__content">
-                            <?php echo esc_html($address); ?>
+                            <?php echo pll_e('Address'); ?>
                         </div>
                     <?php } ?>
                 </div>

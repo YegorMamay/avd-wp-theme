@@ -45,9 +45,11 @@
 
 .social {
   @extend %reset-list;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   padding: 0 10px;
 
-  &,
   &-item {
     display: inline-block;
     vertical-align: middle;
