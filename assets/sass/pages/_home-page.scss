@@ -101,11 +101,9 @@
 
   &__image {
     display: block;
-    width: 150px;
-    height: 150px;
-    padding: 25px;
-    border-radius: $border_round_radius;
-    box-shadow: $social_box_shadow;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
   }
 
   &__link {
@@ -148,11 +146,6 @@
     &__item {
       width: 33.33333%;
       max-width: none;
-    }
-
-    &__image {
-      width: 240px;
-      height: 240px;
     }
 
     &__caption {
@@ -660,6 +653,7 @@
     &__icon-wrapper {
       width: 80px;
       height: 80px;
+
       & i {
         font-size: 30px;
       }

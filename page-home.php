@@ -53,7 +53,9 @@
                      id="tab_<?php echo $count_tab_content ?>">
                     <?php foreach ($content['tab_items'] as $value) { ?>
                         <div class="tab-catalog__item">
-                            <img class="tab-catalog__image" src="<?php echo $value['catalog_item_image']; ?>">
+                            <a class="tab-catalog__image-wrapper" href="<?php echo $value['catalog_item_link']; ?>">
+                                <img class="tab-catalog__image" src="<?php echo $value['catalog_item_image']; ?>">
+                            </a>
                             <a class="tab-catalog__link" href="<?php echo $value['catalog_item_link']; ?>">
                                 <?php echo $value['catalog_item_title']; ?>
                             </a>
@@ -135,18 +137,12 @@ $advantages_image = wp_get_attachment_url($attachment_advantages);
         <div class="block-contacts__wrapper">
             <div class="block-contacts__section">
                 <div class="block-contacts__field">
-                    <?php
-                    $email = get_theme_mod('bw_additional_email');
-                    if (!empty($email)) { ?>
-                        <div class="block-contacts__icon-wrapper">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                        </div>
-                        <div class="block-contacts__content">
-                            <a class="block-contacts__link" href="mailto:<?php echo esc_attr($email); ?>">
-                                <?php echo esc_html($email); ?>
-                            </a>
-                        </div>
-                    <?php } ?>
+                    <div class="block-contacts__icon-wrapper">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="block-contacts__content">
+                        <?php echo get_post_meta(get_the_ID(), 'facebook_text', true); ?>
+                    </div>
                 </div>
                 <div class="block-contacts__field">
                     <div class="block-contacts__icon-wrapper">
