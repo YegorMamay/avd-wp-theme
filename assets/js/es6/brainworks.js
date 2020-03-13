@@ -403,7 +403,7 @@
 
         links.each((index, element) => {
             const $element = $(element), href = $element.attr('href');
-            if(href) {
+            if (href) {
                 if (href[0] === '#' || href.slice(0, 2) === '/#' && !(href.slice(1, 3) === '__')) {
                     $element.on('click', (e) => {
                         e.preventDefault();
@@ -518,24 +518,19 @@
     let mobileSearchBtn = document.querySelector('.js-show-search');
     let blockSearchForm = document.getElementById('searchform');
 
-    $(window).on('resize', function () {
 
-        if($(window).width() < 1024) {
-            document.querySelector('.js-container').prepend(blockSearchForm);
-        }
-    });
+    if ($(window).width() < 1024) {
+        document.querySelector('.js-container').prepend(blockSearchForm);
 
-    $(window).trigger('resize');
+        $(document).click(function (event) {
+            if ($(event.target).closest('.js-show-search, #searchform').length) return;
+            blockSearchForm.classList.remove('active');
+            event.stopPropagation();
+        });
+    }
 
     mobileSearchBtn.addEventListener('click', function () {
         blockSearchForm.classList.add('active');
-    });
-
-    $(document).mouseup(function (e){
-        if (!$('#searchform').is(e.target)
-            && $('#searchform').has(e.target).length === 0) {
-            blockSearchForm.classList.remove('active');
-        }
     });
 
     //disabled page scroll
