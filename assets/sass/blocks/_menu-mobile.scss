@@ -6,6 +6,24 @@
   nav.main-nav {
     display: none;
   }
+
+  .home {
+    & .nav-mobile-header {
+      background-color: transparent;
+      position: relative;
+      top: auto;
+      left: auto;
+      z-index: 100;
+      margin-bottom: -70px;
+
+      & .logo {
+        & img {
+          background: $themeColorTwo;
+          padding: 3px;
+        }
+      }
+    }
+  }
   .nav-mobile-header {
     display: flex;
     align-items: center;

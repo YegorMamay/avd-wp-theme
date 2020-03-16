@@ -33,6 +33,10 @@ $review-next: '\00bb'; // &raquo;
 
   }
 
+  &-wrapper {
+    overflow: hidden;
+  }
+
   &-item {
     margin-bottom: 30px;
     box-shadow: none;
